@@ -44,14 +44,16 @@ public class SelenideExample {
     }
 
     @Test
-    public void test3() {
+    public void test3(){
         open("https://www.simbirsoft.com/");
-        $(By.xpath("//a[@href=\"/help/\"]"))
-                .shouldBe(visible)
-                .shouldHave(text("Услуги"))
-                .click();
+        $(By.xpath("//a[@href='/help/']"))
+                    .shouldBe(visible)
+                    .shouldHave(text("Услуги"))
+                    .click();
         $(By.xpath("//h1")).shouldHave(text("Услуги")).shouldBe(visible);
         webdriver().shouldHave(url("https://www.simbirsoft.com/help/"));
         sleep(5000);
-    }
+        }
+
+    
 }
